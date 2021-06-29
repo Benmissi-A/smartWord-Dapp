@@ -1,17 +1,17 @@
 import React from "react";
 import Dapp from "./Dapp";
 import { useContract } from "web3-hooks";
-import { counterAddress, counterAbi } from "./contracts/Counter";
+import { smartWordAddress, smartWordAbi } from "./contracts/Counter";
 import SmartWord  from "./contracts/SmartWord";
 
 export const SmartWord = React.createContext(null);
 
 function App() {
-  const smartWord = useContract(counterAddress, counterAbi);
+  const smartWord = useContract(smartWordAddress, smartWordAbi);
   return (
-    <CounterContext.Provider value={smartWord}>
+    <SmartWordContext.Provider value={smartWord}>
       <Dapp />
-    </CounterContext.Provider>
+    </SmartWordContext.Provider>
   );
 }
 

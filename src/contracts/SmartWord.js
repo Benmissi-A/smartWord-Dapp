@@ -1,7 +1,7 @@
 // Deployed on Rinkeby
-export const counterAddress = "0x58A595fBC0f5c0Fe3253C0a339C1d064Ffd9eC74";
+export const smartWordAddress = "0x58A595fBC0f5c0Fe3253C0a339C1d064Ffd9eC74";
 
-export const counterAbi = [
+export const martWordAbi = [
   {
     anonymous: false,
     inputs: [
