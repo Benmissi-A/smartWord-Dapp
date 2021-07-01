@@ -43,7 +43,6 @@ const Dapp = () => {
     try {
       let res = await smartWord.getTextById(nftId);
       console.log(res.toString());
-      
     } catch (e) {
       console.log("something wrong");
     }
