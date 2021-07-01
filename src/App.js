@@ -8,9 +8,9 @@ import { Box } from "@chakra-ui/react";
 export const SmartWordContext = React.createContext(null);
 
 function App() {
-  const smartWord = useContract(smartWordAddress, smartWordAbi);
+  const smart = useContract(smartWordAddress, smartWordAbi);
   return (
-    <SmartWordContext.Provider value={smartWord}>
+    <SmartWordContext.Provider value={smart}>
       <Box minHeight="100vh">
         <Header/>
         <Dapp />

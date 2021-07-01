@@ -12,9 +12,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+
 const Dapp = () => {
   const [web3State, login] = useContext(Web3Context);
-  const smartWord = useContext(SmartWordContext)
+  const smartWord = useContext(SmartWordContext);
   const [content, setContent] = useState("");
   const [text, setText] = useState("");
   const [hash, setHash] = useState("");
@@ -35,12 +36,13 @@ const Dapp = () => {
     txt = txt.split(" ").join("");
     txt = txt.toLowerCase();
     setContent(txt);
+    setValid(false)
   };
 
   const handleClickGetTextById = async () => {
     try {
       let res = await smartWord.getTextById(nftId);
-      console.log(res)
+      console.log(res.toString());
       
     } catch (e) {
       console.log("something wrong");
@@ -48,7 +50,8 @@ const Dapp = () => {
   }
   const handleClickCreateNft = async () => {
     try{
-      await smartWord.text(hash, text);
+      let res = await smartWord.name();
+      console.log(res.toString())
       setValid(true)
     }catch(e){
       console.log(e.message)
