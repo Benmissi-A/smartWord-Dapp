@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./Header"
 import Dapp from "./Dapp";
 import { useContract } from "web3-hooks";
 import { smartWordAddress, smartWordAbi } from "./contracts/SmartWord";
@@ -11,6 +12,7 @@ function App() {
   return (
     <SmartWordContext.Provider value={smartWord}>
       <Box minHeight="100vh">
+        <Header/>
         <Dapp />
       </Box>
     </SmartWordContext.Provider>
