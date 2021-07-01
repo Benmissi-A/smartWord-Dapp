@@ -13,6 +13,15 @@ import {
 
 const Dapp = () => {
   const [web3State, login] = useContext(Web3Context);
+  const [content, setContent] = useState("");
+
+  const handleContentChange = (e) => {
+    let txt = e.target.value.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+        txt = txt.split(" ").join("");
+        txt = txt.toLowerCase();
+    setContent(txt);
+  };
+  console.log(content);
 
   return (
     <>
@@ -23,10 +32,12 @@ const Dapp = () => {
       </Box>
       <Center>
         <Container>
-
-        <Box></Box>
-        <Textarea placeHolder="enter your text to get the hash" />
-        <Button colorScheme="blue">Convert</Button>
+          <Box></Box>
+          <Textarea
+            placeHolder="enter your text to get the hash"
+            onChange={handleContentChange}
+          />
+          <Button colorScheme="blue">Convert</Button>
         </Container>
       </Center>
       <p>MetaMask installed: {web3State.isMetaMask ? "yes" : "no"}</p>
