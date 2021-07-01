@@ -10,7 +10,7 @@ function App() {
   const smartWord = useContract(smartWordAddress, smartWordAbi);
   return (
     <SmartWordContext.Provider value={smartWord}>
-      <Box minHeight="100vh" >
+      <Box minHeight="100vh">
         <Dapp />
       </Box>
     </SmartWordContext.Provider>
