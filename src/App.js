@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header"
+import Header from "./Header";
 import Dapp from "./Dapp";
 import { useContract } from "web3-hooks";
 import { smartWordAddress, smartWordAbi } from "./contracts/SmartWord";
@@ -10,12 +10,12 @@ export const SmartWordContext = React.createContext(null);
 function App() {
   const smart = useContract(smartWordAddress, smartWordAbi);
   return (
-    <SmartWordContext.Provider value={smart}>
-      <Box minHeight="100vh">
-        <Header/>
+    <Box minHeight="100vh">
+      <Header />
+      <SmartWordContext.Provider value={smart}>
         <Dapp />
-      </Box>
-    </SmartWordContext.Provider>
+      </SmartWordContext.Provider>
+    </Box>
   );
 }
 

@@ -57,6 +57,15 @@ const Dapp = () => {
       console.log(e.message)
     }
   }
+  const handleShowNftBalance = async () => {
+       try {
+         let res = await smartWord.showNftBalance(address);
+         console.log(res.toString());
+         setValid(true);
+       } catch (e) {
+         console.log(e.message);
+       }
+  }
   console.log(content);
   //console.log(text);
   console.log(hash);
