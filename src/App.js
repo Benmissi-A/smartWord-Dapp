@@ -1,8 +1,7 @@
 import React from "react";
 import Dapp from "./Dapp";
 import { useContract } from "web3-hooks";
-import { smartWordAddress, smartWordAbi } from "./contracts/Counter";
-import SmartWord  from "./contracts/SmartWord";
+import { smartWordAddress, smartWordAbi } from "./contracts/SmartWord";
 
 export const SmartWord = React.createContext(null);
 
