@@ -3,7 +3,7 @@ import Dapp from "./Dapp";
 import { useContract } from "web3-hooks";
 import { smartWordAddress, smartWordAbi } from "./contracts/SmartWord";
 
-export const SmartWord = React.createContext(null);
+export const SmartWordContext = React.createContext(null);
 
 function App() {
   const smartWord = useContract(smartWordAddress, smartWordAbi);
