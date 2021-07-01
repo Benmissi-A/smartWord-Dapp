@@ -48,10 +48,10 @@ const Dapp = () => {
   }
   const handleClickCreateNft = async () => {
     try{
-      await smartWord.txt(hash, text);
+      await smartWord.text(hash, text);
       setValid(true)
     }catch(e){
-      console.log('something wrong')
+      console.log(e.message)
     }
   }
   console.log(content);
