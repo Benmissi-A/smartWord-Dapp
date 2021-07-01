@@ -20,12 +20,13 @@ const Dapp = () => {
   const [text, setText] = useState("");
   const [hash, setHash] = useState("");
   const [valid, setValid] = useState(false);
-  const [address, setAddress] = useState(web3State.account);
+  const [address, setAddress] = useState('');
   const [nftId, setNftId] = useState(1)
 
   useEffect(() => {
     setAddress(web3State.account);
   }, [web3State]);
+
   useEffect(() => {
     setHash(ethers.utils.id(content));
   }, [content]);
@@ -49,7 +50,7 @@ const Dapp = () => {
   }
   const handleClickCreateNft = async () => {
     try{
-      let res = await smartWord.name();
+      let res = await smartWord.text(hash, text);
       console.log(res.toString())
       setValid(true)
     }catch(e){
@@ -58,7 +59,7 @@ const Dapp = () => {
   }
   const handleShowNftBalance = async () => {
        try {
-         let res = await smartWord.showNftBalance(address);
+         let res = await smartWord.balanceOf(web3State.account);
          console.log(res.toString());
          setValid(true);
        } catch (e) {
@@ -92,7 +93,7 @@ const Dapp = () => {
             </>
           )}
           <Box>
-            <Button my="2" colorScheme="blue">
+            <Button my="2" colorScheme="blue" onClick={handleShowNftBalance}>
               Show nft Balance
             </Button>
             <Input
